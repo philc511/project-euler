@@ -1,4 +1,14 @@
-﻿            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Problem6
+    {
+        static void Main(string[] args)
+        {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
 
             int n = 100;// <=214 both methods work. <=305 second method works only

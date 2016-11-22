@@ -28,3 +28,15 @@ def isBinaryPalindromic(n):
     b = 2*b+a%2
     a = a/2
   return b == n
+
+def isPandigital(n):
+  powers=[1,10,100,1000,10000,100000,1000000,10000000,100000000]
+  if (n > 99999999 and n < 1000000000):
+    total = 0
+    while n > 0:
+      digit = n%10
+      total = total + powers[digit-1]*digit
+      n = n / 10
+    return total == 987654321
+  else:
+    return False

@@ -43,6 +43,16 @@ class TestEuler(unittest.TestCase):
   def test_isBinaryPalindromicFalse(self):
     self.assertFalse(Euler.isBinaryPalindromic(0b10111))
 
+  def test_isPandigitalTrue(self):
+    self.assertTrue(Euler.isPandigital(123456789))
+    self.assertTrue(Euler.isPandigital(645382791))
+        
+  def test_isPandigitalFalse(self):
+    self.assertFalse(Euler.isPandigital(1))
+    self.assertFalse(Euler.isPandigital(12345678))
+    self.assertFalse(Euler.isPandigital(987665432))
+    self.assertFalse(Euler.isPandigital(9987654321))
+
 if __name__ == '__main__':
   unittest.main()
 
