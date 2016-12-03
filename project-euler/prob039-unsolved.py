@@ -1,6 +1,29 @@
 import unittest
-import Euler
-import time
+#import Euler
+#import time
+
+# Pythagoran triples obtained via https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple
+# a+b+c = k*((m2 - n2) + 2mn + (m2 + n2)) = 2km(m+n)
+buckets = [0] * 1001
+for k in range(1,100):
+  for m in range(2,  1000):
+    for n in range(1,m):
+      p = k*m*2*(m+n)
+      if p==120:
+        print k, m,n, k*(m*m-n*n), k*2*m*n, k*(m*m+n*n)
+      if p<=1000:
+        buckets[p]=buckets[p]+1
+      else:
+        break
+
+print buckets[120]        
+max=0
+for i in range(0,1000):
+  if(buckets[i] > max):
+    max=buckets[i]
+    print i,max
+   
+print 'donee'
 
             
 def problem038(nrange):
@@ -49,43 +72,5 @@ class TestProblem(unittest.TestCase):
 
 #unittest.main()
 
-t0 = time.time()
-print problem038(range(2,10))
-t1 = time.time()
-total1 = t1-t0
 
-t0 = time.time()
-# borrow a string based solution to compare...https://projecteuler.net/thread=38;page=2
-for a in xrange(10000) :
-    num_str = ""
-    for b in xrange(1, 10) :
-        num_str += str(a * b)
-        
-        if len(num_str) >= 9 :
-            break
-            
-    if len(num_str) == 9 :
-        found = True
-        for i in xrange(1,10) :
-            if str(i) not in num_str :
-                found = False
-                
-        if found :
-            print a, num_str
-t1 = time.time()
-total2 = t1-t0
-
-print total1
-print total2
-
-# now just timing the isPandigital function (see http://stackoverflow.com/questions/2484892/fastest-algorithm-to-check-if-a-number-is-pandigital)
-t0 = time.time()
-pans=0;
-for i in range(123456789,123987655):
-    if (Euler.isPandigital(i)):
-         pans = pans+1
-print pans    
-t1 = time.time()
-total3 = t1-t0
-print total3
 

@@ -1,0 +1,7 @@
+Total number of combinations=99x99
+
+2^2..2^100 = 99 etc
+
+4:  4^2 = 2^4, 4^3 = 2^6, 4^50=2^100, so 49 of the 100 values already accounted for 
+8:  8^33 = 2^99, so 2,3,..33 ie 32 already accounted for
+16: 16^25 = 
