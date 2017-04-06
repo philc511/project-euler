@@ -1,4 +1,4 @@
-public class Problem308 {
+public class Prob308 {
 	private static long[] primes = new long[] {2,  3,  5,  7, 11, 13, 17, 19, 23, 29};
 	
 	private static long[][] instructions = new long[][] {
