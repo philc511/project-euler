@@ -1,9 +1,9 @@
 package pjc.projecteuler;
 
 import org.junit.jupiter.api.Test;
+import pjc.projecteuler.problems51to100.Problem059;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
