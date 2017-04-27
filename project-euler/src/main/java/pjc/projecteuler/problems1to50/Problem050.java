@@ -3,13 +3,13 @@ package pjc.projecteuler.problems1to50;
 import java.util.ArrayList;
 import java.util.List;
 
-import pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SieveOfEratosthenes;
 
 
 public class Problem050 {
     public static final int SIZE = 1000000;
     public static void main(String[] args) {
-        List<Integer> primes = SeiveOfErasthones.getPrimesAsList(SIZE);
+        List<Integer> primes = SieveOfEratosthenes.getPrimesAsList(SIZE);
         int maxNumInSequence = 0;
         int maxSum = 0;
         

@@ -1,6 +1,6 @@
 package pjc.projecteuler.problems1to50;
 
-import pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SieveOfEratosthenes;
 
 import java.util.Date;
 
@@ -21,7 +21,7 @@ public class Problem041 {
     }
 
     public Problem041() {
-        sieve = SeiveOfErasthones.getArray(MAX);
+        sieve = SieveOfEratosthenes.getArray(MAX);
     }
 
     private void solve() {

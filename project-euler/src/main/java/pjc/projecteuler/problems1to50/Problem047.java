@@ -1,6 +1,6 @@
 package pjc.projecteuler.problems1to50;
 
-import pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SieveOfEratosthenes;
 
 import java.util.Date;
 import java.util.List;
@@ -10,7 +10,7 @@ public class Problem047 {
 
 	public static void main(String[] args) {
 		Date startTime = new Date();
-		List<Integer> primes = SeiveOfErasthones.getPrimesAsList(1000);
+		List<Integer> primes = SieveOfEratosthenes.getPrimesAsList(1000);
 		
 		int counter = 0;
 		for (int i = 0; i < 1000; i++) {
@@ -24,7 +24,6 @@ public class Problem047 {
 				break;
 			}
 		}
-
 
 		System.out.printf("%d ms", (new Date()).getTime() - startTime.getTime());		
 	}

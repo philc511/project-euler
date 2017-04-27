@@ -1,6 +1,6 @@
 package pjc.projecteuler.problems51to100;
 
-import pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SieveOfEratosthenes;
 
 /**
  * 
@@ -14,7 +14,7 @@ public class Problem051 {
      */
     public static void main(String[] args) {
         
-        int[] a = SeiveOfErasthones.getArray(MAX);
+        int[] a = SieveOfEratosthenes.getArray(MAX);
         for (int i = 0; i < MAX; i++) {
             // k is the first set of digits, either 0, 1 or 2 
             for (int k = 0; k < 3; k++) {
