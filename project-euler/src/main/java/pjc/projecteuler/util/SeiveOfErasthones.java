@@ -1,4 +1,4 @@
-package org.pjc.projecteuler.util;
+package pjc.projecteuler.util;
 
 import java.util.ArrayList;
 import java.util.List;

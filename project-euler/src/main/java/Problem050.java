@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import org.pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SeiveOfErasthones;
 
 
 public class Problem050 {

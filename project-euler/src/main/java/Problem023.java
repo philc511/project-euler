@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import org.pjc.projecteuler.util.IntegerFunctions;
+import pjc.projecteuler.util.IntegerFunctions;
 
 
 public class Problem023 {

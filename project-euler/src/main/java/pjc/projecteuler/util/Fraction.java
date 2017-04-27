@@ -1,4 +1,4 @@
-package org.pjc.projecteuler.util;
+package pjc.projecteuler.util;
 
 public class Fraction {
     private long numerator;

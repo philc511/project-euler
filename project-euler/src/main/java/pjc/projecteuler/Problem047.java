@@ -1,9 +1,11 @@
-package sandbox;
+package pjc.projecteuler;
+
+import pjc.projecteuler.util.SeiveOfErasthones;
 
 import java.util.Date;
 import java.util.List;
 
-public class MyMain {
+public class Problem047 {
 	
 
 	public static void main(String[] args) {

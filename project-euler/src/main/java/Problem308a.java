@@ -1,4 +1,4 @@
-import org.pjc.projecteuler.util.Fraction;
+import pjc.projecteuler.util.Fraction;
 
 
 public class Problem308a {

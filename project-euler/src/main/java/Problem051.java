@@ -1,4 +1,4 @@
-import org.pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SeiveOfErasthones;
 
 /**
  * 

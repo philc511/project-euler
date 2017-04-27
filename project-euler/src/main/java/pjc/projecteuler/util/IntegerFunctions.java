@@ -1,4 +1,4 @@
-package org.pjc.projecteuler.util;
+package pjc.projecteuler.util;
 
 public class IntegerFunctions {
     public static boolean isAbundant(int n) {

@@ -1,6 +1,6 @@
 package pjc.projecteuler;
 
-import org.pjc.projecteuler.util.SeiveOfErasthones;
+import pjc.projecteuler.util.SeiveOfErasthones;
 
 import java.util.Date;
 
