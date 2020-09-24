@@ -12,6 +12,13 @@ def sieveOfErasthenes(size):
                 a[k] = 0
     return a
 	
+def is_prime(n):
+    max_factor = int(sqrt(n))
+    for i in range(2, max_factor+1):
+        if n % i == 0:
+            return False
+    return True
+
 def isPalindromic(n):
   a = n
   b=0
