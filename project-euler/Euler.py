@@ -12,7 +12,12 @@ def sieveOfErasthenes(size):
                 a[k] = 0
     return a
 	
-def is_prime(n):
+def is_prime(n, sieve = []):
+    if n > len(sieve)-1:
+        return is_prime_calc(n)
+    return sieve[n]==1
+
+def is_prime_calc(n):
     max_factor = int(sqrt(n))
     for i in range(2, max_factor+1):
         if n % i == 0:
