@@ -1,4 +1,5 @@
 import itertools
+import time
 import Euler
 
 def pairs(elements):
@@ -16,18 +17,30 @@ def pairs(elements):
 def is_concat_pair_prime(pair, sieve):
   return Euler.is_prime(int(str(pair[0]) + str(pair[1])), sieve) and Euler.is_prime(int(str(pair[1]) + str(pair[0])), sieve)
   
-PRIME_MAX=1000
-sieve = Euler.sieveOfErasthenes(PRIME_MAX)
+
+PRIME_MAX=700
+SET_SIZE=5
+sieve = Euler.sieveOfErasthenes(1000000)
 primes=[]
 for i in range(3,PRIME_MAX):
     if sieve[i] == 1:
         primes.append(i)
+primes.remove(5)
+print("done sieve")
 
+prime_pairs={}
+for i in primes:
+    for j in primes: 
+        prime_pairs[(i,j)] = is_concat_pair_prime((i,j), sieve)
+        prime_pairs[(j,i)] = prime_pairs[(i,j)]
+print("done creating array of pairs")
+
+start =time.perf_counter()
 max_sum = 0
-for set in itertools.combinations(primes,4):
+for set in itertools.combinations(primes,SET_SIZE):
     is_all_prime = True
     for pair in itertools.combinations(set,2):
-        if not is_concat_pair_prime(pair, sieve):
+        if not prime_pairs[pair]:
             is_all_prime = False
             break
     if is_all_prime:
@@ -35,5 +48,7 @@ for set in itertools.combinations(primes,4):
         set_sum = sum(set)
         if set_sum > max_sum:
             max_sum = set_sum
-        break
-print(max_sum)
+            print(max_sum)
+            break
+end= time.perf_counter()
+print(end - start)
