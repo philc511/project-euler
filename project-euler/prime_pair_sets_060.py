@@ -18,9 +18,9 @@ def is_concat_pair_prime(pair, sieve):
   return Euler.is_prime(int(str(pair[0]) + str(pair[1])), sieve) and Euler.is_prime(int(str(pair[1]) + str(pair[0])), sieve)
   
 
-PRIME_MAX=700
-SET_SIZE=5
-sieve = Euler.sieveOfErasthenes(1000000)
+PRIME_MAX=10000
+SET_SIZE=4
+sieve = Euler.sieveOfErasthenes(100000000)
 primes=[]
 for i in range(3,PRIME_MAX):
     if sieve[i] == 1:
@@ -28,11 +28,15 @@ for i in range(3,PRIME_MAX):
 primes.remove(5)
 print("done sieve")
 
+prime_pairs_list = []
 prime_pairs={}
 for i in primes:
     for j in primes: 
         prime_pairs[(i,j)] = is_concat_pair_prime((i,j), sieve)
         prime_pairs[(j,i)] = prime_pairs[(i,j)]
+        if is_concat_pair_prime((i,j), sieve) and i < j:
+            prime_pairs_list.append((i,j))
+print(len(prime_pairs_list))
 print("done creating array of pairs")
 
 start =time.perf_counter()
