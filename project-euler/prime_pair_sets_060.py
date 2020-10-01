@@ -17,7 +17,7 @@ def look_for_pairs_of_pairs(pairs, sieve):
             print(set)
 
 PRIME_MAX=5000
-sieve = Euler.sieveOfErasthenes(100000000)
+sieve = Euler.sieveOfErasthenes(50000000)
 primes=[]
 for i in range(3,PRIME_MAX):
     if sieve[i] == 1:
@@ -46,5 +46,32 @@ start =time.perf_counter()
 #look_for_pairs_of_pairs(prime_pairs_list_rem_2, sieve)
 # alt approach - add one more prime to the tuple, then another one
 
+def expand_prime_sets(prime_sets_in, primes, sieve, req_remainder):
+    prime_sets_out = []
+    for p in prime_sets_in:
+        min_prime = max(p)
+        for i in primes:
+            if i > min_prime and i%3==req_remainder:
+                is_prime = True
+                for j in p:
+                    if not is_concat_pair_prime((i,j), sieve):
+                        is_prime = False
+                        break
+                if is_prime:
+                    prime_sets_out.append(p + (i,))
+    return prime_sets_out
+
+def generate_sets_with_remainder(req_remainder, primes, sieve):
+    init_primes=[(3,)]
+    for i in primes:
+        if i%3 == req_remainder:
+            init_primes.append((i,))
+    pairs = expand_prime_sets(init_primes, primes, sieve, req_remainder)
+    triples = expand_prime_sets(pairs, primes, sieve, req_remainder)
+    quads = expand_prime_sets(triples, primes, sieve, req_remainder)
+    for quad in quads:
+        print(quad, sum(quad))
+generate_sets_with_remainder(1, primes, sieve)
+generate_sets_with_remainder(2, primes, sieve)
 end= time.perf_counter()
 print(end - start)
