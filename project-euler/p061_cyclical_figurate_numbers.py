@@ -1,5 +1,7 @@
 import itertools
 
+# generate a list of pairs (two lots of two digit numbers) for the given polygonal formula
+# only four digits and exclude anything with third digit as 0
 def gen_pairs(expr):
     four_digit_nos = [expr(n) for n in range(10000) if expr(n)>999 and expr(n)<10000 and expr(n) % 100 > 9]
     return list(map(lambda x: (x//100,x%100), four_digit_nos))
@@ -31,7 +33,10 @@ def iterate_pair(perms, depth, prev_pair, good_seq):
                 if pair[1] == good_seq[0][0]:
                     print(good_seq)
                     print(sum(100*p[0]+p[1] for p in good_seq))
-            
+
+
+# fix the triangle list of pairs at the start then try all permutations 
+# of other lists
 tri_pairs=gen_pairs(triangle)
 
 non_tri_pairs=[]
@@ -45,6 +50,3 @@ for perms in itertools.permutations(non_tri_pairs):
     for tri_pair in tri_pairs:
         iterate_pair(perms, 0, tri_pair, [tri_pair])
 
-#print(gen_pairs(hexagonal))
-#print(gen_pairs(heptagonal))
-#print(gen_pairs(octagonal))
